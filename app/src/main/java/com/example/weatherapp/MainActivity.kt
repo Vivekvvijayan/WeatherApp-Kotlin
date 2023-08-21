@@ -26,10 +26,7 @@ class MainActivity : AppCompatActivity() {
             var cityValue = findViewById<EditText>(R.id.cityname).text.toString()
             viewmodel.getData(cityValue)
         }
-
-
         //get data from live data
-
         viewmodel.response.observe(this) { result ->
 
             result?.let {
@@ -38,19 +35,9 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.humidity).text = it.main.humidity.toString()+" g.m-3"
                 findViewById<TextView>(R.id.pressure).text = it.main.pressure.toString()+" Pascal"
                 findViewById<TextView>(R.id.condition).text = it.weather[0].description
-
-
-
-
-
-
-
-
         }
 
-
     }
-
 
 }
 
